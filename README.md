@@ -5,7 +5,8 @@ This project structure was made thinking in productivity and easy maintenance.
 ##### 1. Express + MongoDB
 ##### 2. StandardJS linter
 ##### 3. Husky and Lint-Staged to run test and linter jobs before commit
-##### 4. JWT authentication
+##### 4. Routes protected with Jwt authentication
 ##### 5. JWT Helper to generate and check tokens
+##### 6. Mail Helper to send mails
 
 #### ...UNDER CONSTRUCTION...

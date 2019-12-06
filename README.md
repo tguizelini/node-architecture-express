@@ -8,5 +8,3 @@ This project structure was made thinking in productivity and easy maintenance.
 ##### 4. Routes protected with Jwt authentication
 ##### 5. JWT Helper to generate and check tokens
 ##### 6. Mail Helper to send mails
-
-#### ...UNDER CONSTRUCTION...

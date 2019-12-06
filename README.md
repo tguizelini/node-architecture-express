@@ -1,3 +1,5 @@
-# A Node API to start new projects
+### A Node API to start new projects
 
-This project structure was made thinking in productivity and easy maintenance using Express + MongoDB.
+This project structure was made thinking in productivity and easy maintenance.
+
+##### Express + MongoDB.

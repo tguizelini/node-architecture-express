@@ -33,7 +33,5 @@ module.exports = (req, res, next) => {
     return res.status(response.status).json(response)
   }
 
-  req.userId = tokenValidation.decode.id
-
   next()
 }

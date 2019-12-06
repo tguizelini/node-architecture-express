@@ -10,8 +10,13 @@ class JwtHelper {
     return token
   }
 
-  isValid(token) {
-    return true
+  isValid (token) {
+    const validation = jwt.verify(token, authConfig.secret, (err, decode) => {
+      if (err) return { isValid: false }
+      return { isValid: true, decode }
+    })
+
+    return validation
   }
 }
 

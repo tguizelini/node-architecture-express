@@ -21,7 +21,7 @@ class AuthRepository {
   async register (name, email, password) {
     const checkExists = await UserModel.findOne({ email });
     
-    if (!checkExists) return HttpResponse.forbiden(null, 'User already exists')
+    if (checkExists) return HttpResponse.forbiden(null, 'User already exists')
 
     const user = await UserModel.create({ name, email, password })
 

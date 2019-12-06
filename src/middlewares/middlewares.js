@@ -1,6 +1,6 @@
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const authMiddleware = require('./auth.middleware')
+const authMiddleware = require('./auth')
 
 module.exports = app => {
   app.set('port', process.env.PORT || 3000)

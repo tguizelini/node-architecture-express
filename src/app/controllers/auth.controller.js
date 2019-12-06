@@ -1,4 +1,4 @@
-const AuthRepository = require('../repositories/auth.repository')
+const AuthRepository = require('../../repositories/auth.repository')
 const HttpResponse = require('../helpers/http-response')
 
 class AuthController {

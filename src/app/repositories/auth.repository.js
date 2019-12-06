@@ -1,4 +1,4 @@
-const UserModel = require('../database/models/user.model')
+const UserModel = require('../models/user.model')
 const HttpResponse = require('../helpers/http-response')
 const bcrypt = require('bcryptjs')
 const JwtHelper = require('../helpers/jwt-helper')

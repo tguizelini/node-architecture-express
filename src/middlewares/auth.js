@@ -1,5 +1,5 @@
-const HttpResponse = require('../helpers/http-response')
-const JwtHelper = require('../helpers/jwt-helper')
+const HttpResponse = require('../app/helpers/http-response')
+const JwtHelper = require('../app/helpers/jwt-helper')
 
 module.exports = (req, res, next) => {
   let response = null

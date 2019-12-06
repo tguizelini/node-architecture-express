@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const authConfig = require('../config/auth.json')
+const authConfig = require('../../config/auth.json')
 
 class JwtHelper {
   generateToken (id) {

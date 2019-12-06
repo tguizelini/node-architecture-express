@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const authConfig = require('../config/auth.json')
 
 class JwtHelper {
-  static generateToken (id) {
+  generateToken (id) {
     const token = jwt.sign({ id }, authConfig.secret, {
       expiresIn: 86400 // one day
     })
@@ -10,9 +10,9 @@ class JwtHelper {
     return token
   }
 
-  static isValid(token) {
+  isValid(token) {
     return true
   }
 }
 
-module.exports = JwtHelper
+module.exports = new JwtHelper()

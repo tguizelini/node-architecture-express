@@ -1,6 +1,8 @@
 const UserModel = require('../database/models/user.model')
 const HttpResponse = require('../helpers/http-response')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const authConfig = require('../config/auth.json')
 
 class AuthRepository {
   async auth (email, password) {
@@ -11,8 +13,12 @@ class AuthRepository {
     const passwordCorrect = await bcrypt.compare(password, user.password);
 
     if (!passwordCorrect) return HttpResponse.forbiden(null, 'Invalid password')
+
+    const token = jwt.sign({ id: user.id }, authConfig.secret, {
+      expiresIn: 86400 // one day
+    })
     
-    return HttpResponse.success(user)
+    return HttpResponse.success({ user, token })
   }
 
   async register (name, email, password) {

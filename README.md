@@ -1,4 +1,4 @@
-## A Node API Base Architecture to start new projects
+## REST API Node Base Architecture to start new projects
 
 This project structure was made thinking in productivity and easy maintenance.
 

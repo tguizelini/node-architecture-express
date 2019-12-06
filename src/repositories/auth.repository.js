@@ -10,6 +10,7 @@ class AuthRepository {
     if (!user) return HttpResponse.forbiden(user, 'User not found')
 
     const passwordCorrect = await bcrypt.compare(password, user.password);
+    user.password = undefined
 
     if (!passwordCorrect) return HttpResponse.forbiden(null, 'Invalid password')
 
@@ -24,6 +25,7 @@ class AuthRepository {
     if (checkExists) return HttpResponse.forbiden(null, 'User already exists')
 
     const user = await UserModel.create({ name, email, password })
+    user.password = undefined
 
     const token = JwtHelper.generateToken(user.id)
 

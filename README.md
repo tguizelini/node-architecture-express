@@ -1,4 +1,4 @@
-### A Node API to start new projects
+## A Node API to start new projects
 
 This project structure was made thinking in productivity and easy maintenance.
 
@@ -8,4 +8,4 @@ This project structure was made thinking in productivity and easy maintenance.
 ##### 4. Husky and Lint-Staged to run test jobs before commit
 ##### 5. JWT authentication
 
-#### UNDER CONSTRUCTION...
+#### ...UNDER CONSTRUCTION...

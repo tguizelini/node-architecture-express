@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const routes = require('./routes/routes')
 
 const app = express()
 
@@ -10,7 +11,7 @@ app.get('/', (req, res) => {
   res.json('API running')
 })
 
-require('./routes/auth.route')(app)
+routes(app)
 
 app.listen(3000, () => {
   console.log('Server running on port 3000')

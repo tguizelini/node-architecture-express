@@ -9,6 +9,10 @@ class JwtHelper {
 
     return token
   }
+
+  static isValid(token) {
+    return true
+  }
 }
 
 module.exports = JwtHelper

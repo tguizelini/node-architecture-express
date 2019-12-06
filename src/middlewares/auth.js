@@ -27,12 +27,14 @@ module.exports = (req, res, next) => {
     return res.status(response.status).json(response)
   }
 
-  const isTokenValid = JwtHelper.isValid(token)
+  const tokenValidation = JwtHelper.isValid(token)
 
-  if (!isTokenValid) {
+  if (!tokenValidation.isValid) {
     response = HttpResponse.unauthorizedError(null, 'Token invalid')
     return res.status(response.status).json(response)
   }
+
+  req.userId = tokenValidation.userId
 
   next()
 }

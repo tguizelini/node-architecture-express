@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs')
 const JwtHelper = require('../helpers/jwt-helper')
 
 class AuthService {
-  async auth (email, password) {
-    const user = await UserRepository.findOne({ email }).select('+password')
+  async auth (login, password) {
+    const user = await UserRepository.findOne({ login }).select('+password')
 
     if (!user) return HttpResponse.forbiden(user, 'User not found')
 
@@ -19,12 +19,12 @@ class AuthService {
     return HttpResponse.success({ user, token })
   }
 
-  async register (name, email, password) {
+  async register (name, login, password) {
     const checkExists = await UserRepository.findOne({ email })
 
     if (checkExists) return HttpResponse.forbiden(null, 'User already exists')
 
-    const user = await UserRepository.create({ name, email, password })
+    const user = await UserRepository.create({ name, login, password })
     user.password = undefined
 
     const token = JwtHelper.generateToken(user.id)
